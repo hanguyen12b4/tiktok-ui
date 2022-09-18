@@ -3,7 +3,7 @@
 
 :root {
     --primary: rgba(254, 44, 85, 1);
-
+    --black: rgba(22, 24, 35, 0.06);
     // Default Layout
     --default-layout-header-hight: 60px;
     --default-layout-width: 1150px;
@@ -21,4 +21,16 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--black);
+    text-decoration: none;
 }
