@@ -15,11 +15,13 @@ function Header() {
                     <img src={images.logo} alt="Tiktok" />
                 </div>
                 <div className={cx('search')}>
-                    <input placeholder="Tìm kiếm tài khoản và video" spellcheck={false} />
-                    <button className={cx('clear-button')}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </button>
-                    <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+                    <input placeholder="Tìm kiếm tài khoản và video" spellCheck={false} />
+                    <div className={cx('input-button')}>
+                        <button className={cx('clear-button')}>
+                            <FontAwesomeIcon icon={faCircleXmark} />
+                        </button>
+                        <FontAwesomeIcon className={cx('loading', 'd-none')} icon={faSpinner} />
+                    </div>
                     <button className={cx('search-button')}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </button>
