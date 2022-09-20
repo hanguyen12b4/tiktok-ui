@@ -11,16 +11,16 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                {/* <div className={cx('logo')}>
                     <img src={images.logo} alt="Tiktok" />
-                </div>
+                </div> */}
                 <div className={cx('search')}>
-                    <input placeholder="Tìm kiếm tài khoản và video" spellCheck={false} />
+                    <input placeholder="Search accounts and videos" spellCheck={false} />
                     <div className={cx('input-button')}>
-                        <button className={cx('clear-button')}>
+                        <button className={cx('clear-button', 'd-none')}>
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
-                        <FontAwesomeIcon className={cx('loading', 'd-none')} icon={faSpinner} />
+                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
                     </div>
                     <button className={cx('search-button')}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
