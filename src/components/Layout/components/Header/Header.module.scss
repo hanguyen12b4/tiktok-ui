@@ -16,10 +16,14 @@
     width: var(--default-layout-width);
 }
 
+.search,
+.search-result {
+    width: 361px;
+}
+
 .search {
     display: flex;
     align-items: center;
-    width: 361px;
     height: var(--search-height);
     background-color: var(--black);
     border-radius: 92px;
@@ -69,6 +73,37 @@
     &:focus-within {
         border: solid 1.5px rgba(22, 24, 35, 0.34);
     }
+}
+
+// Search Account Result
+
+.search-account {
+}
+
+.search-title {
+    font-size: 1.4rem;
+    padding: 5px 12px;
+    color: rgba(22, 24, 35, 0.5);
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.search-account-list {
+    width: 100%;
+}
+
+.see-more-account {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 15px 16px;
+}
+.search-account-item:hover,
+.see-more-account:hover {
+    cursor: pointer;
+    background-color: rgba(136, 136, 136, 0.05);
 }
 
 .input-button {

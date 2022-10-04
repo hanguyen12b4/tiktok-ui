@@ -1,0 +1,51 @@
+.search-account-item {
+    display: flex;
+    padding: 9px 12px;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(136, 136, 136, 0.08);
+    }
+}
+
+.account-image {
+    display: block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    overflow: hidden;
+}
+
+.username-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.account-username {
+    color: var(--text-color);
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.check-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 8px;
+    color: rgb(32, 213, 236);
+}
+
+.account-name {
+    color: rgba(22, 24, 35, 0.5);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 500;
+}
