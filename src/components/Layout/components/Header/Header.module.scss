@@ -1,6 +1,5 @@
 .wrapper {
     --search-height: 46px;
-
     width: 100%;
     height: var(--default-layout-header-hight);
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
@@ -76,9 +75,6 @@
 }
 
 // Search Account Result
-
-.search-account {
-}
 
 .search-title {
     font-size: 1.4rem;
