@@ -11,8 +11,8 @@ function AccountItem({ searchResult }) {
         <div className={cx('search-account-item')}>
             <img
                 className={cx('account-image')}
-                alt="account-img"
-                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/6282287a97d2f3c55744e0c68a7f36c9~c5_300x300.webp?x-expires=1665014400&x-signature=VtTXoC26xq8g4ibEl72U6T7A2hU%3D"
+                alt=""
+                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/e1b840ab597a1367e638b381e6e05ad7~c5_100x100.jpeg?x-expires=1666317600&x-signature=G1y824CyiZtwzJjJSldGwhMee0E%3D"
             />
             <div className={cx('account-info')}>
                 <div className={cx('username-wrap')}>

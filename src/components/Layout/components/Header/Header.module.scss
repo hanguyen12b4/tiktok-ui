@@ -9,9 +9,10 @@
 
 .inner {
     display: flex;
+    height: 100%;
+    padding: 0 var(--default-layout-horizontal-spacer);
     align-items: center;
     justify-content: space-between;
-    height: 100%;
     width: var(--default-layout-width);
 }
 
@@ -115,4 +116,13 @@
         font-size: 1.6rem;
         color: rgba(22, 24, 35, 0.34);
     }
+}
+
+// Button
+.more-button {
+    font-size: 2rem;
+    margin-left: 18px;
+    background: transparent;
+    cursor: pointer;
+    padding: 8px 16px;
 }

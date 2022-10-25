@@ -1,9 +1,10 @@
 .wrapper {
     font-size: 1.6rem;
     padding: 7px 8px;
+    color: var(--text-color);
     min-width: 120px;
-    font-weight: 700;
     border-radius: 4px;
+    font-weight: 600;
     cursor: pointer;
     user-select: none;
     border: 1px solid transparent;
@@ -19,7 +20,10 @@
 
 // Icons
 .icon {
+    display: inline-block;
+    text-align: center;
     font-size: 1.6rem;
+    width: 24px;
 }
 
 // Button types
