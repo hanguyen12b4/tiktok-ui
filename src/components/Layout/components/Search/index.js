@@ -1,12 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 
+import * as request from '~/utils/request';
+import { SearchIcon } from '~/components/Icons';
 import AccountItem from '~/components/AccountItem';
 import { Popper as WrapperPopper } from '~/components/Popper';
 import styles from './Search.module.scss';
+import { useDebounce } from '~/hooks';
 
 const cx = classNames.bind(styles);
 
@@ -17,14 +20,21 @@ function Search({ data }) {
     const [showResult, setShowResult] = useState(true);
 
     const inputRef = useRef();
+    const debounced = useDebounce(searchValue, 500);
 
     useEffect(() => {
-        if (!searchValue) {
+        if (!debounced.trim()) {
+            setSearchResults([]);
             return;
         }
         setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
-            .then((res) => res.json())
+        request
+            .get('users/search', {
+                params: {
+                    q: debounced,
+                    type: 'less',
+                },
+            })
             .then((res) => {
                 setSearchResults(res.data);
                 setLoading(false);
@@ -32,7 +42,7 @@ function Search({ data }) {
             .catch(() => {
                 setLoading(false);
             });
-    }, [searchValue]);
+    }, [debounced]);
 
     const handleHideResult = () => {
         setShowResult(false);
@@ -54,7 +64,7 @@ function Search({ data }) {
                                 ))}
                             </div>
                         </div>
-                        <div className={cx('see-more-account')}>Xem tất cả kết quả dành cho "sss"</div>
+                        <div className={cx('see-more-account')}>Xem tất cả kết quả dành cho "{debounced}"</div>
                     </WrapperPopper>
                 </div>
             )}
@@ -85,7 +95,7 @@ function Search({ data }) {
                     {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
                 </div>
                 <button className={cx('search-button')}>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    <SearchIcon />
                 </button>
             </div>
         </HeadlessTippy>
